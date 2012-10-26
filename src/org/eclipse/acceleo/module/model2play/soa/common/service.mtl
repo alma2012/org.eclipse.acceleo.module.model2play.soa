@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateService.
+ */]
+[module service('http://www.obeonetwork.org/dsl/soa/2.0.0')]
+
+
+[**
+ * The documentation of the template generateService.
+ * @param aService
+ */]
+[template public generateService(myService : Service)]
+
+// Ici service [myService.name/]
+
+[/template]
