@@ -3,6 +3,7 @@
  * The documentation of the module generateService.
  */]
 [module service('http://www.obeonetwork.org/dsl/soa/2.0.0')]
+[import org::eclipse::acceleo::module::model2play::soa::files::operation]
 
 
 [**
@@ -11,6 +12,21 @@
  */]
 [template public generateService(myService : Service)]
 
+public interface [myService.name/] {
+
 // Ici service [myService.name/]
+////
+
+[if not(myService.ownedInterface.oclIsUndefined())]
+
+
+	[for(myService.ownedInterface.ownedOperations)]
+	[generateOperation()/]
+	[/for]
+
+
+[/if]
+
+};
 
 [/template]
