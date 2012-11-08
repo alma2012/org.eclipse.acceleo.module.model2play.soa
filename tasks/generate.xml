@@ -16,10 +16,10 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.4.2.v20120111-2020.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.obeonetwork.dsl.soa_2.3.0.201210171528.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.obeonetwork.dsl.soa_2.3.0.201210311556.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.obeonetwork.dsl.environment_2.3.0.201210171528.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.obeonetwork.dsl.environment_2.3.0.201210311556.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.cdo_4.0.1.v20120719-1030.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.cdo.common_4.0.1.v20120507-1130.jar"/>

@@ -3,6 +3,7 @@
  * The documentation of the module generate.
  */]
 [module generate('http://www.obeonetwork.org/dsl/soa/2.0.0')]
+
 [import org::eclipse::acceleo::module::model2play::soa::common::service]
 
 [**
@@ -14,7 +15,7 @@
 
 [for(myComponent.ownedServices)]
 
-[file (myComponent.name.concat('/').concat(name).concat('I').concat('.java'), false, 'UTF-8')]
+[file ('interfaces/'.concat(myComponent.name).concat('/').concat(name).concat('I').concat('.java'), false, 'UTF-8')]
 [generateService()/]
 [/file]
 

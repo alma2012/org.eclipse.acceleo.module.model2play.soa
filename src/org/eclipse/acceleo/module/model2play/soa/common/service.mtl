@@ -18,12 +18,9 @@ public interface [myService.name/] {
 ////
 
 [if not(myService.ownedInterface.oclIsUndefined())]
-
-
 	[for(myService.ownedInterface.ownedOperations)]
 	[generateOperation()/]
 	[/for]
-
 
 [/if]
 
