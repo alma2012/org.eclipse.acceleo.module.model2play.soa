@@ -6,7 +6,7 @@
 [import org::eclipse::acceleo::module::model2play::soa::common::service]
 
 [**
- * The documentation of the template generateElement.
+ * The documentation of the template generateElement. 
  * @param aSystem
  */]
 [template public generateElement(myComponent : Component)]
