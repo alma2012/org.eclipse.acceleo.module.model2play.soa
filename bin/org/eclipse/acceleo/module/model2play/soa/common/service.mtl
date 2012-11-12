@@ -3,7 +3,7 @@
  * The documentation of the module generateService.
  */]
 [module service('http://www.obeonetwork.org/dsl/soa/2.0.0')]
-[import org::eclipse::acceleo::module::model2play::soa::files::operation]
+[import org::eclipse::acceleo::module::model2play::soa::common::operation]
 
 
 [**
@@ -12,7 +12,7 @@
  */]
 [template public generateService(myService : Service)]
 
-public interface [myService.name/] {
+public interface [myService.name/]I {
 
 // Ici service [myService.name/]
 ////

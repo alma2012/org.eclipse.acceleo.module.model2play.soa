@@ -13,6 +13,7 @@
       <body xsi:type="mtl:ForBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
         <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package services.interfaces;&#xA;&#xA;"/>
           <body xsi:type="mtl:TemplateInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <definition href="../common/service.emtl#/0/generateService"/>
@@ -27,26 +28,8 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:OperationCallExp">
+                <source xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="app/services/interfaces/">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:OperationCallExp">
-                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <source xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="interfaces/">
-                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    </source>
-                    <argument xsi:type="ocl.ecore:PropertyCallExp">
-                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                      <source xsi:type="ocl.ecore:VariableExp" name="myComponent" referredVariable="/0/generateElement/myComponent">
-                        <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
-                      </source>
-                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component/name"/>
-                    </argument>
-                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
-                  </source>
-                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
-                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  </argument>
-                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
                 </source>
                 <argument xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -214,7 +197,7 @@
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateElement">
       <details key="start" value="302"/>
-      <details key="end" value="579"/>
+      <details key="end" value="585"/>
       <details key="line" value="13"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateElement/@body.0">
@@ -224,7 +207,7 @@
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateElement/@body.1">
       <details key="start" value="379"/>
-      <details key="end" value="566"/>
+      <details key="end" value="572"/>
       <details key="line" value="16"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateElement/@body.1/@body.0">
@@ -234,125 +217,105 @@
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/generateElement/@body.1/@body.1">
       <details key="start" value="413"/>
-      <details key="end" value="558"/>
+      <details key="end" value="564"/>
       <details key="line" value="18"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/generateElement/@body.1/@body.1/@body.0">
-      <details key="start" value="531"/>
-      <details key="end" value="548"/>
+      <details key="start" value="506"/>
+      <details key="end" value="536"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateElement/@body.1/@body.1/@body.1">
+      <details key="start" value="537"/>
+      <details key="end" value="554"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/generateElement/@body.1/@body.1/@body.0/self">
+    <eAnnotations source="positions.8" references="/0/generateElement/@body.1/@body.1/@body.1/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.8" references="/0/generateElement/@body.1/@body.1/@body.1">
-      <details key="start" value="550"/>
-      <details key="end" value="551"/>
-      <details key="line" value="20"/>
+    <eAnnotations source="positions.9" references="/0/generateElement/@body.1/@body.1/@body.2">
+      <details key="start" value="556"/>
+      <details key="end" value="557"/>
+      <details key="line" value="22"/>
     </eAnnotations>
-    <eAnnotations source="positions.9" references="/0/generateElement/@body.1/@body.1/@fileUrl">
+    <eAnnotations source="positions.10" references="/0/generateElement/@body.1/@body.1/@fileUrl">
       <details key="start" value="420"/>
-      <details key="end" value="511"/>
+      <details key="end" value="487"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.10" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source">
+    <eAnnotations source="positions.11" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source">
       <details key="start" value="420"/>
-      <details key="end" value="495"/>
+      <details key="end" value="471"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source">
+    <eAnnotations source="positions.12" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source">
       <details key="start" value="420"/>
-      <details key="end" value="483"/>
+      <details key="end" value="459"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@source">
+    <eAnnotations source="positions.13" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@source">
       <details key="start" value="420"/>
-      <details key="end" value="470"/>
+      <details key="end" value="446"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@source/@source">
-      <details key="start" value="420"/>
+    <eAnnotations source="positions.14" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@argument.0">
+      <details key="start" value="454"/>
       <details key="end" value="458"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@source/@source/@source">
-      <details key="start" value="420"/>
-      <details key="end" value="433"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@source/@source/@argument.0">
-      <details key="start" value="441"/>
-      <details key="end" value="457"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@source/@source/@argument.0/myComponent">
-      <details key="start" value="441"/>
-      <details key="end" value="452"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@source/@argument.0">
-      <details key="start" value="466"/>
-      <details key="end" value="469"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@argument.0">
-      <details key="start" value="478"/>
-      <details key="end" value="482"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@argument.0/self">
+    <eAnnotations source="positions.15" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@source/@argument.0/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@argument.0">
-      <details key="start" value="491"/>
-      <details key="end" value="494"/>
+    <eAnnotations source="positions.16" references="/0/generateElement/@body.1/@body.1/@fileUrl/@source/@argument.0">
+      <details key="start" value="467"/>
+      <details key="end" value="470"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/generateElement/@body.1/@body.1/@fileUrl/@argument.0">
-      <details key="start" value="503"/>
-      <details key="end" value="510"/>
+    <eAnnotations source="positions.17" references="/0/generateElement/@body.1/@body.1/@fileUrl/@argument.0">
+      <details key="start" value="479"/>
+      <details key="end" value="486"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/generateElement/@body.1/@body.1/@charset">
-      <details key="start" value="520"/>
-      <details key="end" value="527"/>
+    <eAnnotations source="positions.18" references="/0/generateElement/@body.1/@body.1/@charset">
+      <details key="start" value="496"/>
+      <details key="end" value="503"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/generateElement/@body.1/@body.2">
-      <details key="start" value="559"/>
-      <details key="end" value="560"/>
-      <details key="line" value="21"/>
+    <eAnnotations source="positions.19" references="/0/generateElement/@body.1/@body.2">
+      <details key="start" value="565"/>
+      <details key="end" value="566"/>
+      <details key="line" value="23"/>
     </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/generateElement/@body.1/@iterSet">
+    <eAnnotations source="positions.20" references="/0/generateElement/@body.1/@iterSet">
       <details key="start" value="384"/>
       <details key="end" value="409"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/generateElement/@body.1/@iterSet/myComponent">
+    <eAnnotations source="positions.21" references="/0/generateElement/@body.1/@iterSet/myComponent">
       <details key="start" value="384"/>
       <details key="end" value="395"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/generateElement/@body.2">
-      <details key="start" value="567"/>
-      <details key="end" value="568"/>
-      <details key="line" value="23"/>
+    <eAnnotations source="positions.22" references="/0/generateElement/@body.2">
+      <details key="start" value="573"/>
+      <details key="end" value="574"/>
+      <details key="line" value="25"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/generateElement/@documentation">
+    <eAnnotations source="positions.23" references="/0/generateElement/@documentation">
       <details key="start" value="220"/>
       <details key="end" value="301"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/generateElement/@documentation/aSystem">
+    <eAnnotations source="positions.24" references="/0/generateElement/@documentation/aSystem">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/generateElement/myComponent">
+    <eAnnotations source="positions.25" references="/0/generateElement/myComponent">
       <details key="start" value="335"/>
       <details key="end" value="358"/>
       <details key="line" value="13"/>
