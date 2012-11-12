@@ -15,9 +15,7 @@
 
 [for(myComponent.ownedServices)]
 
-[file ('app/services/interfaces/'.concat(name).concat('I').concat('.java'), false, 'UTF-8')]
-package services.interfaces;
-
+[file ('interfaces/'.concat(myComponent.name).concat('/').concat(name).concat('I').concat('.java'), false, 'UTF-8')]
 [generateService()/]
 [/file]
 
