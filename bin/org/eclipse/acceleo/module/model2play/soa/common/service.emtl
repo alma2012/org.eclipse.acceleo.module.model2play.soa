@@ -27,7 +27,6 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;////&#xA;&#xA;"/>
       <body xsi:type="mtl:IfBlock">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
         <body xsi:type="mtl:ForBlock">
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
           <body xsi:type="mtl:TemplateInvocation">
@@ -49,7 +48,7 @@
             <referredProperty xsi:type="ecore:EReference" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Interface/ownedOperations"/>
           </iterSet>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
         <ifExpr xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="ocl.ecore:OperationCallExp">
@@ -204,7 +203,7 @@
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateService">
       <details key="start" value="309"/>
-      <details key="end" value="601"/>
+      <details key="end" value="598"/>
       <details key="line" value="13"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateService/@body.0">
@@ -244,95 +243,90 @@
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/generateService/@body.5">
       <details key="start" value="442"/>
-      <details key="end" value="584"/>
+      <details key="end" value="581"/>
       <details key="line" value="20"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/generateService/@body.5/@body.0">
-      <details key="start" value="494"/>
-      <details key="end" value="496"/>
+      <details key="start" value="495"/>
+      <details key="end" value="574"/>
       <details key="line" value="21"/>
     </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/generateService/@body.5/@body.1">
-      <details key="start" value="497"/>
-      <details key="end" value="576"/>
-      <details key="line" value="23"/>
+    <eAnnotations source="positions.11" references="/0/generateService/@body.5/@body.0/@body.0">
+      <details key="start" value="543"/>
+      <details key="end" value="544"/>
+      <details key="line" value="22"/>
     </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/generateService/@body.5/@body.1/@body.0">
+    <eAnnotations source="positions.12" references="/0/generateService/@body.5/@body.0/@body.1">
       <details key="start" value="545"/>
-      <details key="end" value="546"/>
-      <details key="line" value="24"/>
-    </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/generateService/@body.5/@body.1/@body.1">
-      <details key="start" value="547"/>
-      <details key="end" value="566"/>
+      <details key="end" value="564"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/generateService/@body.5/@body.1/@body.1/self">
+    <eAnnotations source="positions.13" references="/0/generateService/@body.5/@body.0/@body.1/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/generateService/@body.5/@body.1/@body.2">
-      <details key="start" value="568"/>
-      <details key="end" value="569"/>
-      <details key="line" value="25"/>
+    <eAnnotations source="positions.14" references="/0/generateService/@body.5/@body.0/@body.2">
+      <details key="start" value="566"/>
+      <details key="end" value="567"/>
+      <details key="line" value="23"/>
     </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/generateService/@body.5/@body.1/@iterSet">
-      <details key="start" value="502"/>
-      <details key="end" value="542"/>
+    <eAnnotations source="positions.15" references="/0/generateService/@body.5/@body.0/@iterSet">
+      <details key="start" value="500"/>
+      <details key="end" value="540"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/generateService/@body.5/@body.1/@iterSet/@source">
-      <details key="start" value="502"/>
-      <details key="end" value="526"/>
+    <eAnnotations source="positions.16" references="/0/generateService/@body.5/@body.0/@iterSet/@source">
+      <details key="start" value="500"/>
+      <details key="end" value="524"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/generateService/@body.5/@body.1/@iterSet/@source/myService">
-      <details key="start" value="502"/>
-      <details key="end" value="511"/>
+    <eAnnotations source="positions.17" references="/0/generateService/@body.5/@body.0/@iterSet/@source/myService">
+      <details key="start" value="500"/>
+      <details key="end" value="509"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/generateService/@body.5/@body.2">
-      <details key="start" value="577"/>
-      <details key="end" value="579"/>
-      <details key="line" value="26"/>
+    <eAnnotations source="positions.18" references="/0/generateService/@body.5/@body.1">
+      <details key="start" value="575"/>
+      <details key="end" value="576"/>
+      <details key="line" value="24"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/generateService/@body.5/@ifExpr">
+    <eAnnotations source="positions.19" references="/0/generateService/@body.5/@ifExpr">
       <details key="start" value="446"/>
       <details key="end" value="492"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/generateService/@body.5/@ifExpr/@source">
+    <eAnnotations source="positions.20" references="/0/generateService/@body.5/@ifExpr/@source">
       <details key="start" value="449"/>
       <details key="end" value="492"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/generateService/@body.5/@ifExpr/@source/@source">
+    <eAnnotations source="positions.21" references="/0/generateService/@body.5/@ifExpr/@source/@source">
       <details key="start" value="450"/>
       <details key="end" value="474"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/generateService/@body.5/@ifExpr/@source/@source/myService">
+    <eAnnotations source="positions.22" references="/0/generateService/@body.5/@ifExpr/@source/@source/myService">
       <details key="start" value="450"/>
       <details key="end" value="459"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/generateService/@body.6">
-      <details key="start" value="585"/>
-      <details key="end" value="589"/>
-      <details key="line" value="29"/>
+    <eAnnotations source="positions.23" references="/0/generateService/@body.6">
+      <details key="start" value="582"/>
+      <details key="end" value="586"/>
+      <details key="line" value="26"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/generateService/@documentation">
+    <eAnnotations source="positions.24" references="/0/generateService/@documentation">
       <details key="start" value="227"/>
       <details key="end" value="308"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/generateService/@documentation/aService">
+    <eAnnotations source="positions.25" references="/0/generateService/@documentation/aService">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/generateService/myService">
+    <eAnnotations source="positions.26" references="/0/generateService/myService">
       <details key="start" value="342"/>
       <details key="end" value="361"/>
       <details key="line" value="13"/>
