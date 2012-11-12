@@ -12,7 +12,7 @@
  */]
 [template public generateService(myService : Service)]
 
-public interface [myService.name/] {
+public interface [myService.name/]I {
 
 // Ici service [myService.name/]
 ////
