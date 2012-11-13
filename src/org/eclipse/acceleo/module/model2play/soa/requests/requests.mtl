@@ -1,0 +1,41 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module requests.
+ */]
+
+[module requests('http://www.obeonetwork.org/dsl/soa/2.0.0')]
+
+[comment : Variables "globales"/]
+
+
+[query public get_soa_folder() : String =
+'app/services/'
+/]
+
+
+
+[query public get_interfaces_folder() : String =
+get_soa_folder() + 'interfaces/'
+/]
+
+[query public get_implementations_folder() : String =
+get_soa_folder() + 'implementations/'
+/]
+
+[query public get_interfaces_package() : String =
+'services.interfaces'
+/]
+
+[query public get_implementations_package() : String =
+'services.implementations'
+/]
+
+[comment : Conventions de nommage /]
+[query public get_implementation_name( aService : Service ) : String = 
+aService.name + 'Impl'
+/]
+
+[query public get_interface_name( aService : Service ) : String = 
+aService.name + 'Iface'
+/]
+

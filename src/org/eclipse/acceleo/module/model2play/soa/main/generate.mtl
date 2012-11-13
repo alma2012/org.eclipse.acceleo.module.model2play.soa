@@ -4,7 +4,8 @@
  */]
 [module generate('http://www.obeonetwork.org/dsl/soa/2.0.0')]
 
-[import org::eclipse::acceleo::module::model2play::soa::common::service]
+[import org::eclipse::acceleo::module::model2play::soa::files::interfaceService]
+[import org::eclipse::acceleo::module::model2play::soa::files::implementationService]
 
 [**
  * The documentation of the template generateElement. 
@@ -15,11 +16,8 @@
 
 [for(myComponent.ownedServices)]
 
-[file ('app/services/interfaces/'.concat(name).concat('I').concat('.java'), false, 'UTF-8')]
-package services.interfaces;
-
-[generateService()/]
-[/file]
+[generateServiceInterfaceFile()/]
+[generateServiceImplementationFile()/]
 
 [/for]
 

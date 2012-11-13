@@ -1,0 +1,47 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateService.
+ */]
+[module implementationService('http://www.obeonetwork.org/dsl/soa/2.0.0')]
+[import org::eclipse::acceleo::module::model2play::soa::common::signatureOperation]
+[import org::eclipse::acceleo::module::model2play::soa::common::importsService]
+
+[import org::eclipse::acceleo::module::model2play::soa::requests::requests/]
+
+[**
+ * The documentation of the template generateService.
+ * @param aService
+ */]
+[template public generateServiceImplementationFile(myService : Service)]
+[file (get_implementations_folder().concat(myService.get_implementation_name()).concat('.java'), false, 'UTF-8')]
+package [get_implementations_package()/];
+
+import [get_interfaces_package()/].[get_interface_name()/];
+
+[generateImports()/]
+
+public class [myService.get_implementation_name()/] implements [myService.get_interface_name()/] {
+
+[if not(myService.ownedInterface.oclIsUndefined())]
+	[for(myService.ownedInterface.ownedOperations)]
+
+	@Override
+	[generateOperationSignature()/]{
+	
+		// DO NOT REMOVE THIS LINE : [protected(myService.name.concat('_op_').concat(name))]
+
+		// STUB : Paste your own code here
+		
+		// DO NOT REMOVE THIS LINE : [/protected]
+
+		[if not(output->isEmpty())]return null;[/if]
+	}
+	[/for]
+
+[/if]
+
+};
+
+[/file]
+
+[/template]
