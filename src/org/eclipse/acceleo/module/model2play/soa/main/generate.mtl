@@ -11,10 +11,10 @@
  * The documentation of the template generateElement. 
  * @param aSystem
  */]
-[template public generateElement(myComponent : Component)]
+[template public generateElement(mySystem : System)]
 [comment @main/]
 
-[for(myComponent.ownedServices)]
+[for(mySystem.ownedComponents.ownedServices)]
 
 [generateServiceInterfaceFile()/]
 [generateServiceImplementationFile()/]
