@@ -13,7 +13,7 @@
  * @param aService
  */]
 [template public generateServiceInterfaceFile(myService : Service)]
-[file (get_interfaces_folder().concat(myService.get_interface_name()).concat('.java'), false, 'UTF-8')]
+[file (get_interfaces_folder() + myService.get_interface_name() + '.java', false, 'UTF-8')]
 package [get_interfaces_package()/];
 
 [generateImports()/]

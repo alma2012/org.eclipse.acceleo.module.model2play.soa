@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[**
+ * Implementation "standard" d'un Service gerant les entites (ajout,modification,suppression)
+ */]
+[module managedEntityOperation('http://www.obeonetwork.org/dsl/entity/2.0.0', 'http://www.obeonetwork.org/dsl/soa/2.0.0')]
+
+[import org::eclipse::acceleo::module::model2play::soa::requests::requests/]
+
+[template public generate_constructor_operation(anOperation : Operation)]
+[get_managed_entity_name()/] [get_managed_entity_name().toLower()/] = new [get_managed_entity_name()/]([comment TODO/]);
+[get_managed_entity_name().toLower()/].save();
+return [get_managed_entity_name().toLower()/];
+[/template]
+
+[template public generate_destructor_operation(anOperation : Operation)]
+[input->first().name/].delete();
+[/template]
+
+[template public generate_setter_operation(anOperation : Operation)]
+[comment TODO : Checker quel input est bien l'objet a modifier, et caser dans une request /]
+[for(anOperation.input)]
+[if(self.type.name <> anOperation.get_managed_entity_name() )]
+if ( [name/] != null ) {
+	[anOperation.input->first().name/].[name/] = [name/];
+}
+[/if]
+[/for]
+[anOperation.input->first().name/].save();
+return [anOperation.input->first().name/];
+[/template]
+
+
+[**
+ * The documentation of the template generateOperation.
+ * @param anOperation
+ */]
+[template public generateEntityManagmentOperation(myOperation : Operation)]
+[if(get_operation_type() = 'constructor')]
+	[generate_constructor_operation()/]
+[elseif(get_operation_type() = 'destructor')]
+	[generate_destructor_operation()/]
+[elseif(get_operation_type() = 'setter')]
+	[generate_setter_operation()/]
+[elseif(get_operation_type() = 'getter')]
+[/if]
+[comment TODO : Tenir compte des return/]
+
+[/template]

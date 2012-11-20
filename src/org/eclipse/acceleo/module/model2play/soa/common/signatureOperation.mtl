@@ -15,5 +15,5 @@
 	- On pre-checke certaines conditions et on passe par des services/requetes pour les memoriser 
  /]
 [let returnP : OrderedSet(Parameter) = myOperation.output]
-public [if(returnP->isEmpty())]void[else][returnP.type.name/][/if] [name/]([for(myOperation.input)] [type.name/] [name.toLower()/][if not(name=myOperation.input->last().name)],[/if][/for] )[/let]
+public [if(returnP->isEmpty())]void[else][returnP.type.name/][/if] [name/]([for(myOperation.input)] [type.name/] [name.toLower()/][if (self <> myOperation.input->last())],[/if][/for] )[/let]
 [/template]
