@@ -8,6 +8,13 @@
 
 [template public generate_constructor_operation(anOperation : Operation)]
 [get_managed_entity_name()/] [get_managed_entity_name().toLower()/] = new [get_managed_entity_name()/]([comment TODO/]);
+[for(anOperation.input)]
+[if(self.type.name <> anOperation.get_managed_entity_name() )]
+if ( [name/] != null ) {
+	[anOperation.get_managed_entity_name().toLower()/].[name/] = [name/];
+}
+[/if]
+[/for]
 [get_managed_entity_name().toLower()/].save();
 return [get_managed_entity_name().toLower()/];
 [/template]
