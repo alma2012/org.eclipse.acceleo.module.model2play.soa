@@ -14,14 +14,14 @@
  * @param aService
  */]
 [template public generateServiceImplementationFile(myService : Service)]
-[file (get_implementations_folder() + myService.get_implementation_name() + '.java', false, 'UTF-8')]
+[file (get_implementations_folder() + myService.get_implementation_classname() + '.java', false, 'UTF-8')]
 package [get_implementations_package()/];
 
-import [get_interfaces_package()/].[get_interface_name()/];
+import [get_interfaces_package()/].[get_interface_classname()/];
 
 [generateImports()/]
 
-public class [myService.get_implementation_name()/] implements [myService.get_interface_name()/] {
+public class [myService.get_implementation_classname()/] implements [myService.get_interface_classname()/] {
 
 [if not(myService.ownedInterface.oclIsUndefined())]
 	[for(myService.ownedInterface.ownedOperations)]
@@ -47,9 +47,26 @@ public class [myService.get_implementation_name()/] implements [myService.get_in
 	}
 	[/for]
 
+
+/*
+	public static [myService.get_interface_classname()/] getInstance() {
+	
+		if ( _instance == null ) {
+			_instance = new [myService.get_interface_classname()/]();
+		}
+	
+		return _instance;
+
+	}
+
+private static [myService.get_interface_classname()/] _instance = null;
+*/
+
 [/if]
 
-};
+
+
+}
 
 [/file]
 

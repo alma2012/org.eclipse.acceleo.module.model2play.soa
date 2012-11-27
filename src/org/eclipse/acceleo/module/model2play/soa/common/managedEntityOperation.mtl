@@ -35,6 +35,9 @@ return [anOperation.input->first().name/];
  * @param anOperation
  */]
 [template public generateEntityManagmentOperation(myOperation : Operation)]
+
+// Operation type : [get_operation_type()/]
+
 [if(get_operation_type() = 'constructor')]
 	[generate_constructor_operation()/]
 [elseif(get_operation_type() = 'destructor')]

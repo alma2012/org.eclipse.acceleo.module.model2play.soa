@@ -8,35 +8,53 @@
 [comment : Variables "globales"/]
 
 
-[query public get_soa_folder() : String =
+[query public get_services_folder( nothing : OclAny ) : String =
 'app/services/'
 /]
 
-
-
-[query public get_interfaces_folder() : String =
-get_soa_folder() + 'interfaces/'
+[query public get_interfaces_folder( nothing : OclAny ) : String =
+get_services_folder() + 'interfaces/'
 /]
 
-[query public get_implementations_folder() : String =
-get_soa_folder() + 'implementations/'
+[query public get_implementations_folder( nothing : OclAny ) : String =
+get_services_folder() + 'implementations/'
 /]
 
-[query public get_interfaces_package() : String =
-'services.interfaces'
+[query public get_services_package( nothing : OclAny ) : String =
+'services'
 /]
 
-[query public get_implementations_package() : String =
-'services.implementations'
+[query public get_interfaces_package( nothing : OclAny ) : String =
+get_services_package() + '.interfaces'
+/]
+
+[query public get_implementations_package( nothing : OclAny ) : String =
+get_services_package() + '.implementations'
+/]
+
+[query public get_services_class( nothing : OclAny ) : String = 
+'Services'
+/]
+
+[query public get_service_suffix( nothing : OclAny ) : String = 
+'Service'
 /]
 
 [comment : Conventions de nommage /]
-[query public get_implementation_name( aService : Service ) : String = 
+[query public get_implementation_classname( aService : Service ) : String = 
 aService.name + 'Impl'
 /]
 
-[query public get_interface_name( aService : Service ) : String = 
+[query public get_interface_classname( aService : Service ) : String = 
 aService.name + 'Iface'
+/]
+
+[query public get_service( anOperation : Operation ) : Service =
+anOperation.eContainer().eContainer()->filter(Service)->asOrderedSet()->first()
+/]
+
+[query public get_service_name( anOperation : Operation ) : String =
+if not get_service()->isEmpty() then get_service().name + get_service_suffix() else '' endif
 /]
 
 

@@ -13,11 +13,11 @@
  * @param aService
  */]
 [template public generateServiceInterfaceFile(myService : Service)]
-[file (get_interfaces_folder() + myService.get_interface_name() + '.java', false, 'UTF-8')]
+[file (get_interfaces_folder() + myService.get_interface_classname() + '.java', false, 'UTF-8')]
 package [get_interfaces_package()/];
 
 [generateImports()/]
-public interface [myService.get_interface_name()/] {
+public interface [myService.get_interface_classname()/] {
 
 // Ici service [myService.name/]
 ////
@@ -29,7 +29,10 @@ public interface [myService.get_interface_name()/] {
 
 [/if]
 
-};
+// public static [myService.get_interface_classname()/] getInstance();
+
+
+}
 
 [/file]
 
