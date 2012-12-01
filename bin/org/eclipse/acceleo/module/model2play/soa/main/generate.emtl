@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="generate" nsURI="org::eclipse::acceleo::module::model2play::soa::main::generate" startHeaderPosition="83" endHeaderPosition="393">
+  <mtl:Module name="generate" nsURI="org::eclipse::acceleo::module::model2play::soa::main::generate" startHeaderPosition="83" endHeaderPosition="468">
     <documentation xsi:type="mtl:ModuleDocumentation">
       <body startPosition="32" endPosition="80" value="&#xA;The documentation of the module generate.&#xA;&#xA;"/>
     </documentation>
@@ -9,6 +9,7 @@
     </input>
     <imports href="../files/interfaceService.emtl#/0"/>
     <imports href="../files/implementationService.emtl#/0"/>
+    <imports href="../files/factorySOA.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateElement" visibility="Public" main="true">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <body xsi:type="mtl:ForBlock">
@@ -29,22 +30,41 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
-        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Service)">
-          <source xsi:type="ocl.ecore:VariableExp" name="myComponent" referredVariable="/0/generateElement/myComponent">
-            <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+        <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(Service)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Component)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aSystem" referredVariable="/0/generateElement/aSystem">
+              <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System/ownedComponents"/>
           </source>
-          <referredProperty xsi:type="ecore:EReference" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component/ownedServices"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Service)">
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateElement/@body.1/collect/temp1">
+              <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component/ownedServices"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+            <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+          </iterator>
         </iterSet>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="../files/factorySOA.emtl#/0/generateFactoryFile"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/13">
+          <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="317" endPosition="393" value="&#xA;The documentation of the template generateElement.&#xA;@param aSystem&#xA;&#xA;"/>
+        <body startPosition="392" endPosition="468" value="&#xA;The documentation of the template generateElement.&#xA;@param aSystem&#xA;&#xA;"/>
         <parametersDocumentation name="aSystem">
           <body value=""/>
         </parametersDocumentation>
       </documentation>
-      <parameter name="myComponent">
-        <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+      <parameter name="aSystem">
+        <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
       </parameter>
     </ownedModuleElement>
   </mtl:Module>
@@ -74,8 +94,8 @@
         </eAnnotations>
         <eAnnotations source="MTL" references="/0/generateElement"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="myComponent">
-          <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+        <eParameters name="aSystem">
+          <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
         </eParameters>
       </eOperations>
       <eOperations name="generateServiceInterfaceFile">
@@ -102,6 +122,18 @@
           <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Service"/>
         </eParameters>
       </eOperations>
+      <eOperations name="generateFactoryFile">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/factorySOA.emtl#/0/generateFactoryFile"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aSystem">
+          <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
+        </eParameters>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -123,9 +155,9 @@
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Component_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="System_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+        <references href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Service_Class">
@@ -138,21 +170,27 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
   </ocl.ecore:Variable>
   <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Component)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Service)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Service"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Service)" instanceClassName="java.util.List">
       <elementType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Service"/>
     </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Service"/>
@@ -164,10 +202,13 @@
     <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Service"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//Component"/>
+    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.obeonetwork.org/dsl/soa/2.0.0#//System"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -179,28 +220,28 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateElement">
-      <details key="start" value="396"/>
-      <details key="end" value="600"/>
-      <details key="line" value="14"/>
+      <details key="start" value="471"/>
+      <details key="end" value="706"/>
+      <details key="line" value="15"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateElement/@body.0">
-      <details key="start" value="472"/>
-      <details key="end" value="473"/>
-      <details key="line" value="16"/>
-    </eAnnotations>
-    <eAnnotations source="positions.3" references="/0/generateElement/@body.1">
-      <details key="start" value="473"/>
-      <details key="end" value="587"/>
+      <details key="start" value="540"/>
+      <details key="end" value="541"/>
       <details key="line" value="17"/>
     </eAnnotations>
-    <eAnnotations source="positions.4" references="/0/generateElement/@body.1/@body.0">
-      <details key="start" value="506"/>
-      <details key="end" value="507"/>
+    <eAnnotations source="positions.3" references="/0/generateElement/@body.1">
+      <details key="start" value="541"/>
+      <details key="end" value="667"/>
       <details key="line" value="18"/>
     </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateElement/@body.1/@body.0">
+      <details key="start" value="586"/>
+      <details key="end" value="587"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
     <eAnnotations source="positions.5" references="/0/generateElement/@body.1/@body.1">
-      <details key="start" value="508"/>
-      <details key="end" value="538"/>
+      <details key="start" value="588"/>
+      <details key="end" value="618"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/generateElement/@body.1/@body.1/self">
@@ -209,13 +250,13 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/generateElement/@body.1/@body.2">
-      <details key="start" value="540"/>
-      <details key="end" value="541"/>
-      <details key="line" value="20"/>
+      <details key="start" value="620"/>
+      <details key="end" value="621"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/generateElement/@body.1/@body.3">
-      <details key="start" value="542"/>
-      <details key="end" value="577"/>
+      <details key="start" value="622"/>
+      <details key="end" value="657"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/generateElement/@body.1/@body.3/self">
@@ -224,39 +265,74 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/generateElement/@body.1/@body.4">
-      <details key="start" value="579"/>
-      <details key="end" value="581"/>
-      <details key="line" value="21"/>
+      <details key="start" value="659"/>
+      <details key="end" value="661"/>
+      <details key="line" value="22"/>
     </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/generateElement/@body.1/@iterSet">
-      <details key="start" value="478"/>
-      <details key="end" value="503"/>
+    <eAnnotations source="positions.11" references="/0/generateElement/@body.1/collect">
+      <details key="start" value="546"/>
+      <details key="end" value="583"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/generateElement/@body.1/@iterSet/myComponent">
-      <details key="start" value="478"/>
-      <details key="end" value="489"/>
+    <eAnnotations source="positions.12" references="/0/generateElement/@body.1/collect/@source">
+      <details key="start" value="546"/>
+      <details key="end" value="569"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/generateElement/@body.2">
-      <details key="start" value="588"/>
-      <details key="end" value="589"/>
-      <details key="line" value="23"/>
-    </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/generateElement/@documentation">
-      <details key="start" value="314"/>
-      <details key="end" value="395"/>
+    <eAnnotations source="positions.13" references="/0/generateElement/@body.1/collect/@source/aSystem">
+      <details key="start" value="546"/>
+      <details key="end" value="553"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/generateElement/@documentation/aSystem">
+    <eAnnotations source="positions.14" references="/0/generateElement/@body.1/collect/@body">
+      <details key="start" value="570"/>
+      <details key="end" value="583"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateElement/@body.1/collect/@body/temp1">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/generateElement/myComponent">
-      <details key="start" value="429"/>
-      <details key="end" value="452"/>
-      <details key="line" value="14"/>
+    <eAnnotations source="positions.16" references="/0/generateElement/@body.1/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateElement/@body.2">
+      <details key="start" value="668"/>
+      <details key="end" value="669"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateElement/@body.3">
+      <details key="start" value="670"/>
+      <details key="end" value="691"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateElement/@body.3/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateElement/@body.4">
+      <details key="start" value="693"/>
+      <details key="end" value="694"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateElement/@documentation">
+      <details key="start" value="389"/>
+      <details key="end" value="470"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateElement/@documentation/aSystem">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateElement/aSystem">
+      <details key="start" value="504"/>
+      <details key="end" value="520"/>
+      <details key="line" value="15"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>
