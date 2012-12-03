@@ -40,6 +40,12 @@ get_services_package() + '.implementations'
 'Service'
 /]
 
+
+[query public get_wsutils_class( any : OclAny ) : String =
+'WSUtils'
+/]
+
+
 [comment : Conventions de nommage /]
 [query public get_implementation_classname( aService : Service ) : String = 
 aService.name + 'Impl'
@@ -81,4 +87,13 @@ anOperation.getAnnotation('entity_manager')._body
 
 [query public service_method_call( anOperation : Operation ) : String =
 get_services_class()+'.get'+get_service_name()+'().'+operation_call()
+/]
+
+
+[query public is_default_datatype( aParameter : Parameter ) : Boolean =
+	invoke('org.eclipse.acceleo.module.model2play.soa.services.Services', 'is_default_datatype(java.lang.String)', Sequence{ aParameter.type.name }) /]
+
+
+[query public get_parameter_from_post( aParameter : Parameter ) : String =
+type.name+' '+name+' = '+get_wsutils_class()+'.get_post_data' + if is_default_datatype() then '_as'+type.name else '' endif + '("'+name+'");' 
 /]
