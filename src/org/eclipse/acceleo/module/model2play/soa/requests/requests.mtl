@@ -4,7 +4,7 @@
  */]
 
 [module requests('http://www.obeonetwork.org/dsl/soa/2.0.0','http://www.obeonetwork.org/dsl/entity/2.0.0','http://www.obeonetwork.org/dsl/environment/2.0.0')]
-
+[import org::eclipse::acceleo::module::model2play::soa::common::utils/]
 [comment : Variables "globales"/]
 
 
@@ -79,5 +79,6 @@ anOperation.eContainer(Interface).get_managed_entity_name()
 anOperation.getAnnotation('entity_manager')._body
 /]
 
-
-
+[query public service_method_call( anOperation : Operation ) : String =
+get_services_class()+'.get'+get_service_name()+'().'+operation_call()
+/]
