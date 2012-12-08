@@ -4,7 +4,12 @@
  */]
 
 [module requests('http://www.obeonetwork.org/dsl/soa/2.0.0','http://www.obeonetwork.org/dsl/entity/2.0.0','http://www.obeonetwork.org/dsl/environment/2.0.0')]
+
+[import org::eclipse::acceleo::module::model2play::entity::requests::requests/]
+
+
 [import org::eclipse::acceleo::module::model2play::soa::common::utils/]
+
 [comment : Variables "globales"/]
 
 
@@ -61,11 +66,6 @@ anOperation.eContainer().eContainer()->filter(Service)->asOrderedSet()->first()
 
 [query public get_service_name( anOperation : Operation ) : String =
 if not get_service()->isEmpty() then get_service().name + get_service_suffix() else '' endif
-/]
-
-
-[query public getAnnotation(object : ObeoDSMObject, key : String) : Annotation =
-object.metadatas.metadatas->filter(Annotation)->select(title = key)->first()
 /]
 
 [query public is_entity_manager_interface( iface : Interface ) : Boolean = 
