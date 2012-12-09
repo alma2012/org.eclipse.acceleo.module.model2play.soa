@@ -25,17 +25,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
- * Entry point of the 'Generate' generation module.
+ * Entry point of the 'GenerateSOA' generation module.
  *
  * @generated
  */
-public class Generate extends AbstractAcceleoGenerator {
+public class GenerateSOA extends AbstractAcceleoGenerator {
     /**
      * The name of the module.
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/org/eclipse/acceleo/module/model2play/soa/main/generate";
+    public static final String MODULE_FILE_NAME = "/org/eclipse/acceleo/module/model2play/soa/main/GenerateSOA";
     
     /**
      * The name of the templates that are to be generated.
@@ -65,7 +65,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public Generate() {
+    public GenerateSOA() {
         // Empty implementation
     }
 
@@ -85,7 +85,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *             the model cannot be loaded.
      * @generated
      */
-    public Generate(URI modelURI, File targetFolder,
+    public GenerateSOA(URI modelURI, File targetFolder,
             List<? extends Object> arguments) throws IOException {
         initialize(modelURI, targetFolder, arguments);
     }
@@ -106,7 +106,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *             This can be thrown in two scenarios : the module cannot be found, or it cannot be loaded.
      * @generated
      */
-    public Generate(EObject model, File targetFolder,
+    public GenerateSOA(EObject model, File targetFolder,
             List<? extends Object> arguments) throws IOException {
         initialize(model, targetFolder, arguments);
     }
@@ -141,7 +141,7 @@ public class Generate extends AbstractAcceleoGenerator {
                  * add in "arguments" this "String" attribute.
                  */
                 
-                Generate generator = new Generate(modelURI, folder, arguments);
+                GenerateSOA generator = new GenerateSOA(modelURI, folder, arguments);
                 
                 /*
                  * Add the properties from the launch arguments.
