@@ -23,7 +23,11 @@ public class [get_services_class()/] {
 [for(aSystem.ownedComponents.ownedServices)]
 // [name/]
 public static [get_interface_classname()/] get[name/][get_service_suffix()/]() {
-	return new [get_implementation_classname()/]();
+	// [protected('for getter of instance of '+name)]
+
+	return [get_implementation_classname()/].getInstance();
+
+	// [/protected]
 }
 
 [/for]

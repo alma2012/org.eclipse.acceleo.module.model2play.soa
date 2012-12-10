@@ -48,19 +48,28 @@ public class [myService.get_implementation_classname()/] implements [myService.g
 	[/for]
 
 
-/*
+	private [myService.get_implementation_classname()/]() {
+
+		// [protected('for constructor of '+myService.name)]
+
+		// Nothing
+
+		// [/protected]
+
+	}
+
 	public static [myService.get_interface_classname()/] getInstance() {
 	
 		if ( _instance == null ) {
-			_instance = new [myService.get_interface_classname()/]();
+			_instance = new [myService.get_implementation_classname()/]();
 		}
 	
 		return _instance;
 
 	}
 
-private static [myService.get_interface_classname()/] _instance = null;
-*/
+	private static [myService.get_interface_classname()/] _instance = null;
+
 
 [/if]
 
