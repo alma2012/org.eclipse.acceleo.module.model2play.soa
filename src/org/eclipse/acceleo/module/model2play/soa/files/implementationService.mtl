@@ -32,21 +32,14 @@ public class [myService.get_implementation_classname()/] implements [myService.g
 	[if(myService.ownedInterface.is_entity_manager_interface())]
 		[generateEntityManagmentOperation()/]
 	[else]
-
-		// DO NOT REMOVE THIS LINE : [protected(myService.name.concat('_op_').concat(name))]
-
-
-		// STUB : Paste your own code here
-
-		// DO NOT REMOVE THIS LINE : [/protected]
+		// [protected('for impl of operation '+name)]
+		
+		// [/protected]
 
 		[if not(output->isEmpty())]return null;[/if]
-		
 	[/if]
-
 	}
 	[/for]
-
 
 	private [myService.get_implementation_classname()/]() {
 
